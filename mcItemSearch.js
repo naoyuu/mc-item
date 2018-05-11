@@ -33,6 +33,17 @@
             paragraph.innerText = result;
             resultDivided.appendChild(paragraph);
 
+            if (itemName === 'こっぺぱん') {
+                const iframe = document.createElement('iframe');
+                const videoResult = itemSearch(itemName);
+                iframe.width = 560;
+                iframe.height = 315;
+                iframe.frameBorder = 0;
+                iframe.allow = "autoplay; encrypted-media"
+                iframe.allowFullscreen;
+                iframe.src="https://www.youtube.com/embed/eSsjSIz2NKY?rel=0";
+                resultDivided.appendChild(iframe);
+            }
         };
         
         
@@ -60,6 +71,9 @@
                 return searchResult;
             }else if (itemName ==='ネザースター') {
                 searchResult = effects[5];
+                return searchResult;
+            }else if (itemName === 'こっぺぱん') {
+                searchResult = "https://www.youtube.com/embed/eSsjSIz2NKY?rel=0";
                 return searchResult;
             }else {
                 searchResult = 'そのアイテムは存在しません';
